@@ -1,9 +1,29 @@
 # GTD
 * project exercise: get thing done
-* tool: Postman
-* language: java (android), c# (.Net)
+* one for Server-Clinet architecture
+ * server/TodoApi
+ * client/GetThingDone
+* one for Stand-Alone local app
+ * client/GetThingDone_mydb
+* test tool
+ * Postman
+* language
+ * java (android), c# (.Net)
 
 ---
+
+# Clinet
+
+* #### Android App  
+
+|  | Client-Server by REST API | Stand-Alone by SQLite |  
+|---|---|---|  
+| path | client/GetThingDone | client/GetThingDone_mydb |  
+|  | ![screenshot](illustration/client_android_app.gif) | ![screenshot](illustration/withSQLite.gif) |  
+
+
+---
+# Client-Server Architecture
 
 # Web/REST API
 
@@ -18,7 +38,6 @@
 | PATCH /api/todo/{id} | Update an existing item | To-do item | None |  204  |  
 | DELETE /api/todo/{id} | Delete an item | None | None|  204  |  
 
-
 ---
 
 # Server
@@ -28,12 +47,6 @@
 
 ### Web Server
 (tod)
-
-# Clinet
-
-* #### Android App
-* client/GetThingDone
- * ![screenshot](illustration/client_android_app.gif)
 
 ## To Do List
 
@@ -221,7 +234,9 @@ X-Powered-By: ASP.NET
 
 ---
 
-## Phase 1
+# Features on Client-Server Architecture
+
+## Phase 1 (done)
 * all data stored in memory
  * https://docs.asp.net/en/latest/tutorials/first-web-api.html
 
@@ -231,6 +246,13 @@ X-Powered-By: ASP.NET
 ## Phase 3
 * all data stored in database on server
  * https://docs.asp.net/en/latest/tutorials/first-mvc-app/index.html
+
+---
+
+# Features on Stand-Alone local App
+
+## Phase 1 (done)
+* SQLite integration
 
 ---
 # Fundation
