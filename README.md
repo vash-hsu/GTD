@@ -253,6 +253,36 @@ X-Powered-By: ASP.NET
 
 ## Phase 1 (done)
 * SQLite integration
+#### architecture
+ ToDoItemDAO.java
+ * SQL for table creation
+ ```
+  CREATE TABLE TaskStore  
+  (  
+    _id INTEGER PRIMARY KEY AUTOINCREMENT,  
+    name TEXT,  
+    isComplete INTEGER  
+  )
+  ```
+   * QQ: should we specify NOT NULL for TEXT and INTEGER? 
+ * SQL for table deletion  
+  * DROP TABLE IF EXISTS TaskStore  
+ * SQL for select  
+  ```
+  SELECT * FROM TaskStore
+  SELECT name, isComplete FROM TaskStore WHERE _id == 1234;
+  ```
+ * SQL for entry insert/update/delete
+  ```
+  INSERT INTO TaskStore (name, isComplete) VALUES ("...", 0);
+  UPDATE TaskStore SET name = "...", isComplete = 1 WHERE _id == 1234;
+  DELETE FROM TaskStore WHERE _id == 1234;
+  ```
+   * QQ: should we skip primary key _id to let it automatically increase?
+ * ToDoListDBHelper (extending SQLiteOpenHelper)  
+  * onCreate (execute SQL create ...)  
+  * onUpgrade (not supported yet)
+  * getDatabase  
 
 ---
 # Fundation
